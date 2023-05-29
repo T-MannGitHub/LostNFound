@@ -32,7 +32,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="73dp"
         android:layout_marginBottom="342dp"
-        android:backgroundTint="@color/green2"
+        android:backgroundTint="#D9EFE8"
         android:foregroundGravity="center_horizontal"
         android:text="@string/btnShowAll"
         android:textColor="#13610A"

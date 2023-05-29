@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LostNFound</string>
     <string name="btnNew">Create New Ad</string>
-    <string name="btnShowAll">Show All Lost Items</string>
+    <string name="btnShowAll">Show All Lost and Found Items</string>
     <string name="postType">Post Type:</string>
     <string name="lost">Lost</string>
     <string name="found">Found</string>
@@ -10,7 +10,7 @@
     <string name="Description">Description</string>
     <string name="Date">Date</string>
     <string name="Location">Location</string>
-    <string name="LostNFound">Lost N Found Items</string>
+    <string name="LostNFound">Lost \'N Found Items</string>
     <string name="Refresh">Show/Update Items</string>
 
 </resources>
