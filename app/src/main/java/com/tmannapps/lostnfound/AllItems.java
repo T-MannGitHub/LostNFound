@@ -14,22 +14,18 @@ import android.widget.Toast;
 
 import com.tmannapps.lostnfound.data.DatabaseHelper;
 import com.tmannapps.lostnfound.databinding.ActivityAllItemsBinding;
-import com.tmannapps.lostnfound.model.User;
 import com.tmannapps.lostnfound.util.Util;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import javax.sql.RowSetMetaData;
-
-public class AllItems extends AppCompatActivity {
+public class AllItems extends AppCompatActivity implements RecyclerViewAdapter.OnRowClickListener{
 
     ActivityAllItemsBinding allItemsBinding;
     RecyclerView recyclerView;
     RecyclerViewAdapter recyclerViewAdapter;
     List<Descriptions> itemsList = new ArrayList<>();
+    DatabaseHelper dbH, dbH2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +34,10 @@ public class AllItems extends AppCompatActivity {
         View view = allItemsBinding.getRoot();
         setContentView(view);
         recyclerView = allItemsBinding.recyclerView;
-        recyclerViewAdapter = new RecyclerViewAdapter(itemsList, this);
+        recyclerViewAdapter = new RecyclerViewAdapter(itemsList, this, this);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        DatabaseHelper dbH;
         dbH = new DatabaseHelper(AllItems.this, Util.DATABASE_NAME, null, Util.DATABASE_VERSION );
         SQLiteDatabase db = dbH.getReadableDatabase();
         Cursor cursor = db.query(Util.TABLE_NAME,
@@ -62,5 +57,33 @@ public class AllItems extends AppCompatActivity {
             }
             dbH.close();
         }
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(AllItems.this, Delete_item.class);
+        startActivity(intent);
+
+            switch (position) {
+            case 0:
+                //Toast.makeText(this, "Clicked on item 1", Toast.LENGTH_SHORT).show();
+                //get the info from the row in the recycler view to the text views in the fragment
+
+                break;
+
+            case 1:
+                //Toast.makeText(this, "Clicked on item 2", Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case 2:
+
+                //Toast.makeText(this, "Clicked on item 3", Toast.LENGTH_SHORT).show();
+                break;
+
+                default:
+                //Toast.makeText(this, "You clicked on an item", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

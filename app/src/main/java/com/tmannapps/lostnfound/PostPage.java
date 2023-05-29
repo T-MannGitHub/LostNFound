@@ -18,6 +18,7 @@ public class PostPage extends AppCompatActivity {
     private ActivityPostPageBinding postPageBinding;
     DatabaseHelper db;
     String lostOrFound = "";
+    public static int numItems = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class PostPage extends AppCompatActivity {
         String date = postPageBinding.editTextDate.getText().toString();
         String location = postPageBinding.editTextLocation.getText().toString();
         String LorF = lostOrFound;
+        numItems +=1;
 
         long result = db.insertUser(new User(id,username, phone, description, date, location, LorF));
         if (result > 0)

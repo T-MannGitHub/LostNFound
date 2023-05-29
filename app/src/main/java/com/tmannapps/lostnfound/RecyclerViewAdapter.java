@@ -14,20 +14,22 @@ import com.tmannapps.lostnfound.model.User;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    public RecyclerViewAdapter(List<Descriptions> itemsList, Context context) {
-        this.itemsList = itemsList;
-        this.context = context;
-    }
-
     private List<Descriptions> itemsList;
     private Context context;
+    private OnRowClickListener listener;
+
+    public RecyclerViewAdapter(List<Descriptions> itemsList, Context context, OnRowClickListener clickListener) {
+        this.itemsList = itemsList;
+        this.context = context;
+        this.listener = clickListener;
+    }
 
     @NonNull
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(context)
                 .inflate(R.layout.lost_n_found_row, parent, false);
-        return new ViewHolder(itemView);
+        return new ViewHolder(itemView, listener);
     }
 
     @Override
@@ -43,13 +45,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return itemsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textViewDescriptionRow;
         TextView textViewLorFRow;
-        public ViewHolder(@NonNull View itemView) {
+        public OnRowClickListener onRowClickListener;
+        public ViewHolder(@NonNull View itemView, OnRowClickListener onRowClickListener) {
             super(itemView);
             textViewDescriptionRow = itemView.findViewById(R.id.textViewDescriptionRow);
             textViewLorFRow = itemView.findViewById(R.id.textViewLorFRow);
+            this.onRowClickListener = onRowClickListener;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onRowClickListener.onItemClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnRowClickListener {
+        void onItemClick (int position);
     }
 }
