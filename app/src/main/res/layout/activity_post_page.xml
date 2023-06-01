@@ -11,10 +11,13 @@
         android:layout_width="124dp"
         android:layout_height="39dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="68dp"
         android:gravity="bottom"
         android:text="@string/postType"
         android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewName"
+        app:layout_constraintEnd_toStartOf="@+id/myRadioGroup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,8 +83,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="78dp"
         android:layout_marginEnd="338dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/Phone"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewName" />
@@ -93,8 +98,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="75dp"
         android:layout_marginEnd="293dp"
+        android:layout_marginBottom="17dp"
         android:text="@string/Description"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPhone" />
@@ -106,8 +113,10 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="147dp"
         android:layout_marginEnd="350dp"
+        android:layout_marginBottom="19dp"
         android:text="@string/Date"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
@@ -115,15 +124,16 @@
     <TextView
         android:id="@+id/textViewLocation"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="89dp"
         android:layout_marginEnd="314dp"
+        android:layout_marginBottom="6dp"
         android:text="@string/Location"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLocation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -132,8 +142,10 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="44dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewName" />
@@ -145,21 +157,25 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="44dp"
+        android:layout_marginBottom="19dp"
         android:ems="10"
         android:inputType="phone"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPhone" />
 
     <EditText
         android:id="@+id/editTextDescription"
-        android:layout_width="346dp"
-        android:layout_height="123dp"
+        android:layout_width="345dp"
+        android:layout_height="58dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="37dp"
         android:layout_marginEnd="44dp"
+        android:layout_marginBottom="52dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
@@ -169,11 +185,14 @@
         android:layout_width="346dp"
         android:layout_height="52dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="44dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLocation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
 
@@ -182,21 +201,18 @@
         android:layout_width="310dp"
         android:layout_height="39dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLocation"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButtonSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="54dp"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="53dp"
         android:layout_marginEnd="16dp"
@@ -209,6 +225,23 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextDate"
         app:srcCompat="@android:drawable/ic_input_add" />
 
+    <Button
+        android:id="@+id/buttonGetLocation"
+        android:layout_width="209dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="137dp"
+        android:backgroundTint="@color/greengrey"
+        android:text="Get Curent Location"
+        android:textSize="16sp"
+        app:cornerRadius="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewLocation"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
