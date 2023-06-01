@@ -11,7 +11,6 @@ import com.tmannapps.lostnfound.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Button newAd, allLostItems;
     private ActivityMainBinding binding;
 
     @Override
