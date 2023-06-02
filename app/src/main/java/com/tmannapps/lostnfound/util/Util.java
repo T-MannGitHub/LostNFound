@@ -13,7 +13,4 @@ public class Util {
     public static final String LOCATION = "location";
     public static final String L_OR_F = "LorF";
 
-    public static final String MAPS_API_KEY="AIzaSyAXTi17--GXep106_MOy3GZ-PSUMUzNey0";
-
-
 }
